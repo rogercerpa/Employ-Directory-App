@@ -1,7 +1,19 @@
 import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import SearchBar from './components/SearchBar';
+import Employees from './components/Employees';
 
 function App() {
-	return <div className="App">hello world</div>;
+	return (
+		<Router>
+			<div>
+				<Navbar />
+				<SearchBar />
+				<Employees />
+			</div>
+		</Router>
+	);
 }
 
 export default App;
