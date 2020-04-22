@@ -17,10 +17,10 @@ class Employees extends Component {
 
 	employeeList = (query) => {
 		API.getRandomEmployee(query)
-			.then((res) => this.setState({ result: res.data }, console.log(query)))
+			.then((res) => console.log(res))
 			.catch((err) => console.log(err));
 	};
-
+	// this.setState({ result: res.data })
 	render() {
 		return (
 			<div>
