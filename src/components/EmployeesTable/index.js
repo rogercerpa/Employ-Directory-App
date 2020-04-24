@@ -1,15 +1,40 @@
 import React from 'react';
 
-export function EmployeesTable({ name, image, email, DOB }) {
+function EmployeesTable(props) {
+	console.log(props.results);
 	return (
-		<tbody>
-			<tr>
-				<th scope="row">1</th>
-				<td>{image}</td>
-				<td>{name}</td>
-				<td>{email}</td>
-				<td>{DOB}</td>
-			</tr>
-		</tbody>
+		<div>
+			<table className="table">
+				<thead className="thead-dark">
+					<tr>
+						<th scope="col">Profile Picture</th>
+						<th scope="col">Name</th>
+						<th scope="col">GitHub account</th>
+						<th scope="col">Email</th>
+					</tr>
+				</thead>
+				<tbody>
+					{props.results.map((result) => (
+						<tr>
+							<td>
+								{/* <img src={result.avatar_url} atl="profile image" height=100 width=100 ></img>  */}
+							</td>
+							<td>{result.login}</td>
+							<td>
+								<a
+									href={result.html_url}
+									rel="noopener noreferrer"
+									target="_blank"
+								>
+									Github Account{' '}
+								</a>
+							</td>
+							<td>{result.DOB}</td>
+						</tr>
+					))}
+				</tbody>
+			</table>
+		</div>
 	);
 }
+export default EmployeesTable;
