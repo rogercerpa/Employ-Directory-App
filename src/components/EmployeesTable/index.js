@@ -14,24 +14,31 @@ function EmployeesTable(props) {
 					</tr>
 				</thead>
 				<tbody>
-					{props.results.map((result) => (
-						<tr>
-							<td>
-								{/* <img src={result.avatar_url} atl="profile image" height=100 width=100 ></img>  */}
-							</td>
-							<td>{result.login}</td>
-							<td>
-								<a
-									href={result.html_url}
-									rel="noopener noreferrer"
-									target="_blank"
-								>
-									Github Account{' '}
-								</a>
-							</td>
-							<td>{result.DOB}</td>
-						</tr>
-					))}
+					{props.results.map((result) => {
+						return (
+							<tr>
+								<td>
+									<img
+										src={result.avatar_url}
+										atl="profile name"
+										style={{ height: 100, width: 100 }}
+									/>
+								</td>
+
+								<td>{result.login}</td>
+								<td>
+									<a
+										href={result.html_url}
+										rel="noopener noreferrer"
+										target="_blank"
+									>
+										Github Account{' '}
+									</a>
+								</td>
+								<td>{result.DOB}</td>
+							</tr>
+						);
+					})}}
 				</tbody>
 			</table>
 		</div>
