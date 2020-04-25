@@ -20,7 +20,7 @@ function EmployeesTable(props) {
 								<td>
 									<img
 										src={result.avatar_url}
-										atl="profile name"
+										alt="profile name"
 										style={{ height: 100, width: 100 }}
 									/>
 								</td>
